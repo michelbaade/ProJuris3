@@ -29,12 +29,4 @@ public BigDecimal getSalario() {
 public void setSalario(BigDecimal salario) {
 	this.salario = salario;
 }
-//public void CargoTotal(BigDecimal custo) {
-//
-//
-//	this.custo.add(custo);
-//
-//
-//}
-
 } 

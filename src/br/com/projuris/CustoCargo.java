@@ -2,7 +2,7 @@ package br.com.projuris;
 import java.math.BigDecimal;
 
 public class CustoCargo   { 
-	
+	//construtor para saber o nome e o custo de cada cargo
 	public CustoCargo(String cargo, BigDecimal custo) {
 		super();
 		this.cargo = cargo;

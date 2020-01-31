@@ -3,7 +3,7 @@ import java.math.BigDecimal;
 public class CustoDepartamento { 
 	private String departamento;
 	private BigDecimal custo;
-	
+	//construtor para saber o nome e o custo de cada departamento
 	public CustoDepartamento(String departamento,BigDecimal custo) {
 		this.departamento = departamento;
 		this.custo = custo;

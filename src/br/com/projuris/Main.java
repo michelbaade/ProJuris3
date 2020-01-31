@@ -5,8 +5,7 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// entrada dos valores
 		Funcionario funcionario1 = new Funcionario("Assistente", "Administrativo", new BigDecimal(1000.0));
 		Funcionario funcionario2 = new Funcionario("Gerente", "Administrativo", new BigDecimal(7000.70));
 		Funcionario funcionario3 = new Funcionario("Diretor", "Administrativo", new BigDecimal(10000.45));
@@ -29,11 +28,16 @@ public class Main {
 		listaFuncionario.add(funcionario9);
 		listaFuncionario.add(funcionario10);
 		
+		
+		// chamada classe que vai verificar e retornar os custos
 		MyCalculo mycal = new MyCalculo();
 		
-		
-		List<CustoDepartamento> custoPorDepartamento = mycal.custoPorDepartamento(listaFuncionario);
 		System.out.println("Custos por Departamentos: ");
+		
+		//lista que retorna o custo por departamento
+		List<CustoDepartamento> custoPorDepartamento = mycal.custoPorDepartamento(listaFuncionario);
+		
+		//for que vai receber e mostrar o nome e o custo de cada departamento com 2 casas decimais
 		for (CustoDepartamento custoDepartamento : custoPorDepartamento) {
 			
 			System.out.printf(custoDepartamento.getDepartamento()+ ": %.2f",custoDepartamento.getCusto());
@@ -43,8 +47,11 @@ public class Main {
 		System.out.println(" ");
 		
 		System.out.println("Custos por Cargos: ");
+		
+		//lista que retorna o custo por cargo
 		List<CustoCargo> custoPorCargo = mycal.custoPorCargo(listaFuncionario);
 		
+		//for que vai receber e mostrar o nome e o custo de cada cargo com 2 casas decimais
 		for (CustoCargo custoCargo : custoPorCargo) {
 			
 			
