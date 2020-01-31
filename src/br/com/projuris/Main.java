@@ -29,68 +29,29 @@ public class Main {
 		listaFuncionario.add(funcionario9);
 		listaFuncionario.add(funcionario10);
 		
-		BigDecimal administrativo = BigDecimal.ZERO;
-		BigDecimal financeiro = BigDecimal.ZERO;
-		BigDecimal juridico = BigDecimal.ZERO;
-		
-		BigDecimal  assistente = BigDecimal.ZERO;
-		BigDecimal	gerente = BigDecimal.ZERO;
-		BigDecimal	diretor = BigDecimal.ZERO;
+		MyCalculo mycal = new MyCalculo();
 		
 		
-		for (Funcionario funcionario : listaFuncionario) {
+		List<CustoDepartamento> custoPorDepartamento = mycal.custoPorDepartamento(listaFuncionario);
+		System.out.println("Custos por Departamentos: ");
+		for (CustoDepartamento custoDepartamento : custoPorDepartamento) {
 			
-			String depart = funcionario.getDepartamento();
-			if(depart == "Administrativo") {
-				
-				administrativo = administrativo.add(funcionario.getSalario());
-				
-			}else if(depart == "Financeiro") {
-				
-				financeiro = financeiro.add(funcionario.getSalario());
-				
-				
-			}else {
-				juridico = juridico.add(funcionario.getSalario());
+			System.out.printf(custoDepartamento.getDepartamento()+ ": %.2f",custoDepartamento.getCusto());
+			System.out.println(" ");
 			
-				
-			}
-			
-			String cargo = funcionario.getCargo(); 
-			
-			if(cargo == "Assistente") {
-				
-				assistente = assistente.add(funcionario.getSalario());
-				
-			}else if(cargo == "Gerente") {
-				
-				gerente = gerente.add(funcionario.getSalario());
-				
-				
-			}else {
-				diretor = diretor.add(funcionario.getSalario());
-			
-				
-			}
-			
-			
-				
 		}
+		System.out.println(" ");
 		
+		System.out.println("Custos por Cargos: ");
+		List<CustoCargo> custoPorCargo = mycal.custoPorCargo(listaFuncionario);
 		
-		
-		System.out.println("Custo total por departamento :");
-		System.out.println(" Administrativo " + administrativo);
-		System.out.println(" Gerente " + financeiro);
-		System.out.println(" Jurídico " + juridico);
-		
-		System.out.println("------------------------------------------------------------------------");
-		
-		System.out.println("Custo total por cargo :");
-		System.out.println(" Assistente " + assistente);
-		System.out.println(" Gerente " + gerente);
-		System.out.println(" Diretor " + diretor);
-		
+		for (CustoCargo custoCargo : custoPorCargo) {
+			
+			
+			System.out.printf(custoCargo.getCargo()+ ": %.2f",custoCargo.getCusto());
+			System.out.println(" ");											
+			
+		}
 		
 		
 	}

@@ -1,10 +1,12 @@
 package br.com.projuris;
 import java.math.BigDecimal;
 
-public class CustoCargo extends Funcionario  { 
-	public CustoCargo(String cargo, String depargamento, BigDecimal salario) {
-		super(cargo, depargamento, salario);
-		// TODO Auto-generated constructor stub
+public class CustoCargo   { 
+	
+	public CustoCargo(String cargo, BigDecimal custo) {
+		super();
+		this.cargo = cargo;
+		this.custo = custo;
 	}
 	private String cargo;
 	private BigDecimal custo;
